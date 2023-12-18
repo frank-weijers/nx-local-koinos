@@ -1,0 +1,12 @@
+{
+  "extends": "assemblyscript/std/assembly.json",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules", "tmp"]
+}

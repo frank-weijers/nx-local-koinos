@@ -1,0 +1,30 @@
+{
+  "name": "token-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "implicitDependencies": ["token-contract"],
+  "projectType": "application",
+  "targets": {
+    "asbuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx asbuild token-contract"
+      }
+    },
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "contracts/token-e2e/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["asbuild"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["contracts/token-e2e/**/*.{js,ts}"]
+      }
+    }
+  }
+}

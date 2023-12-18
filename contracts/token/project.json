@@ -1,0 +1,51 @@
+{
+  "name": "token-contract",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "contracts/token/assembly",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "koinos-precompiler-as contracts/token --copysrc --proto --interface --abi"
+      }
+    },
+    "build:test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx build token-contract && nx test token-contract"
+      }
+    },
+    "asbuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "asc dist/contracts/token/assembly/index.ts --config contracts/token/asconfig.json --use abort= --target release --use BUILD_FOR_HARBINGER=0"
+      },
+      "dependsOn": ["build"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs token-contract {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["contracts/token/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "asp --summary --config contracts/token/as-pect.config.js"
+      }
+    },
+    "test:verbose": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "asp --verbose --summary --config contracts/token/as-pect.config.js"
+      }
+    }
+  },
+  "tags": []
+}

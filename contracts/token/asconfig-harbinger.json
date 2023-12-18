@@ -1,0 +1,20 @@
+{
+  "targets": {
+    "debug": {
+      "binaryFile": "../../build/token/debug/token-harbinger.wasm",
+      "textFile": "../../build/token/debug/token-harbinger.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "release": {
+      "binaryFile": "../../build/token/release/token-harbinger.wasm",
+      "textFile": "../../build/token/release/token-harbinger.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    }
+  },
+  "options": {}
+}
