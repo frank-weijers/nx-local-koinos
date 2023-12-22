@@ -52,7 +52,7 @@ export default {
   // },
   /** Enable code coverage. */
   coverage: [
-    // './contracts/token/assembly/*.ts'
+    './contracts/token/assembly/*.ts'
   ],
   /**
    * Specify if the binary wasm file should be written to the file system.
