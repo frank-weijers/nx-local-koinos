@@ -7,7 +7,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "koinos-precompiler-as contracts/token --copysrc --proto --interface --abi"
+        "command": "koinos-precompiler-as contracts/token/koinos.config.cjs --copysrc --proto --interface --abi"
       }
     },
     "build:test": {
@@ -37,7 +37,7 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "asp --summary --config contracts/token/as-pect.config.js"
+        "command": "asp --summary --config contracts/token/as-pect.config.js --as-config contracts/token/as-pect.asconfig.json"
       }
     },
     "test:verbose": {

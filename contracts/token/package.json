@@ -1,5 +1,9 @@
 {
   "name": "@volano/token-contract",
   "version": "0.0.1",
-  "main": "assembly/index.ts"
+  "ascMain": "assembly/index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "asp --summary"
+  }
 }

@@ -1,5 +1,5 @@
 import { chain, MockVM } from '@koinos/sdk-as';
-import { CONTRACT_ID, HEAD_BLOCK_TIME, MOCK_ACCOUNT_1 } from '@volano/utils';
+import { CONTRACT_ID, HEAD_BLOCK_TIME, MOCK_ACCOUNT_1 } from './test-constants';
 
 describe('Token', () => {
   beforeEach(() => {
@@ -16,6 +16,6 @@ describe('Token', () => {
   });
 
   it('Shoulda', () => {
-    //
+    expect('this').toBe('this');
   });
 });
