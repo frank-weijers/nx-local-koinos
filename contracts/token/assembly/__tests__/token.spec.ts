@@ -1,5 +1,6 @@
 import { chain, MockVM } from '@koinos/sdk-as';
 import { CONTRACT_ID, HEAD_BLOCK_TIME, MOCK_ACCOUNT_1 } from './test-constants';
+import {TokenContract} from "../token-contract";
 
 describe('Token', () => {
   beforeEach(() => {
@@ -16,6 +17,9 @@ describe('Token', () => {
   });
 
   it('Shoulda', () => {
-    expect('this').toBe('this');
+    const token = new TokenContract();
+    const name = token.name();
+
+    expect(name.value).toBe('test');
   });
 });
