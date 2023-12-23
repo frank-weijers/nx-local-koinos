@@ -7,7 +7,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "koinos-precompiler-as contracts/token/koinos.config.cjs --copysrc --proto --interface --abi"
+        "command": "koinos-precompiler-as contracts/token/koinos.config.cjs"
       }
     },
     "build:test": {
@@ -19,7 +19,7 @@
     "asbuild": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "asc dist/contracts/token/assembly/index.ts --config contracts/token/asconfig.json --use abort= --target debug"
+        "command": "asc dist/contracts/token/assembly/index.ts --config contracts/token/asconfig.json --use abort= --target release"
       },
       "dependsOn": ["build"]
     },

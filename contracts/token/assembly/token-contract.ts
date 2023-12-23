@@ -7,7 +7,7 @@ export class TokenContract {
   callArgs: System.getArgumentsReturn | null;
 
   contractId: Uint8Array;
-  testStorage: Storage.Obj<common.str>;
+  testStorage!: Storage.Obj<common.str>;
 
   constructor() {
     this.contractId = System.getContractId();
