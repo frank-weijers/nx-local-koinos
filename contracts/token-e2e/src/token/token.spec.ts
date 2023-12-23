@@ -11,29 +11,12 @@ import {
 
 // ABIs
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import * as tokenAbi from '../../../../dist/contracts/token/assembly/tokencontract-abi.json';
 import { token } from './abi';
 
 jest.setTimeout(600000);
 
 // pre configs for windows paths
 const options = {};
-if (os.platform() == 'win32') {
-  options['dockerComposeFile'] = [
-    path.resolve(__dirname, '../../../../').replace(/\\/g, '/'),
-    'node_modules',
-    '@roamin',
-    'local-koinos',
-    'docker-compose.yml',
-  ].join('/');
-  options['envFile'] = [
-    path.resolve(__dirname, '../../../../').replace(/\\/g, '/'),
-    'node_modules',
-    '@roamin',
-    'local-koinos',
-    '.env',
-  ].join('/');
-}
 
 const localKoinos = new LocalKoinos(options);
 
@@ -56,14 +39,14 @@ beforeAll(async () => {
   console.log({
     tokenAcct,
     path: path.resolve(__dirname, '../../../../build/token/release/token.wasm'),
-    abi: tokenAbi,
+    abi: token.abi,
   });
 
   // Deploy token contract
   TokenContract = await localKoinos.deployContract(
     tokenAcct.wif,
     path.resolve(__dirname, '../../../../build/token/release/token.wasm'),
-    tokenAbi,
+    token.abi,
     { mode: 'manual' },
   );
 
