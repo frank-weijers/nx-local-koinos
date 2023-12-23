@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package common;
 
-import "koinos/options.proto";
+//import "koinos/options.proto";
 
 message str {
   string value = 1;
