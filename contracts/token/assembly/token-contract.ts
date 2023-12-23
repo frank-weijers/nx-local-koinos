@@ -4,6 +4,8 @@ import { common } from './proto';
 const TEST_SPACE_ID = 100;
 
 export class TokenContract {
+  callArgs: System.getArgumentsReturn | null;
+
   contractId: Uint8Array;
   testStorage: Storage.Obj<common.str>;
 
