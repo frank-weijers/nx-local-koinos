@@ -19,7 +19,7 @@
     "asbuild": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "asc dist/contracts/token/assembly/index.ts --config contracts/token/asconfig.json --use abort= --target release --use BUILD_FOR_HARBINGER=0"
+        "command": "asc dist/contracts/token/assembly/index.ts --config contracts/token/asconfig.json --use abort= --target debug"
       },
       "dependsOn": ["build"]
     },
