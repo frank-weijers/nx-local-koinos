@@ -31,7 +31,7 @@
     "@nx/node": "17.2.5",
     "@nx/plugin": "^17.2.5",
     "@nx/workspace": "17.2.5",
-    "@roamin/local-koinos": "^0.4.14",
+    "@roamin/local-koinos": "^0.4.15",
     "@roaminroe/protoc": "^2.4.0",
     "@swc-node/register": "~1.6.7",
     "@swc/core": "~1.3.85",
