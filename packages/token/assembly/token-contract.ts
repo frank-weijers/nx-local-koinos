@@ -11,7 +11,6 @@ export class TokenContract {
   protected readonly _symbol: string = 'TKN';
   protected readonly _decimals: u32 = 8;
 
-
   /**
    * Get name of the token
    * @external
