@@ -1,0 +1,40 @@
+{
+  "name": "utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/utils/assembly",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "koinos-precompiler-as packages/utils/koinos.config.cjs"
+      }
+    },
+    "build:test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx build utils && nx test utils"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/utils/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "asp --summary --config packages/utils/as-pect.config.js --as-config packages/utils/as-pect.asconfig.json"
+      }
+    },
+    "test:verbose": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "asp --verbose --summary --config packages/utils/as-pect.config.js --as-config packages/utils/as-pect.asconfig.json"
+      }
+    }
+  },
+  "tags": []
+}

@@ -4,12 +4,12 @@ export default {
   /**
    * A set of globs passed to the glob package that qualify typescript files for testing.
    */
-  include: ['./contracts/token/assembly/__tests__/**/*.include.ts'],
+  include: ['./packages/token/assembly/__tests__/**/*.include.ts'],
   /**
    * A set of regexp that will disclude source files from testing.
    */
   disclude: [/node_modules/i],
-  entries: ['./contracts/token/assembly/__tests__/**/*.spec.ts'],
+  entries: ['./packages/token/assembly/__tests__/**/*.spec.ts'],
 
   /**
    * Add your required AssemblyScript imports here.
@@ -50,7 +50,7 @@ export default {
   // },
   /** Enable code coverage. */
   coverage: [
-    // './contracts/token/assembly/*.ts'
+    // './packages/token/assembly/*.ts'
   ],
   /**
    * Specify if the binary wasm file should be written to the file system.

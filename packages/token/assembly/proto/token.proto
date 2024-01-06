@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package volano.token;
+
+import "koinos/options.proto";
+
+message info {
+  string name = 1;
+  string symbol = 2;
+  uint32 decimals = 3;
+}

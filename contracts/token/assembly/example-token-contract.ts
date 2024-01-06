@@ -1,15 +1,16 @@
 import { Storage, System } from '@koinos/sdk-as';
-import { common } from './proto';
+import { common } from '@volano/utils';
+import { TokenContract } from '@volano/token';
 
 const TEST_SPACE_ID = 100;
 
-export class TokenContract {
-  callArgs: System.getArgumentsReturn | null;
-
+export class ExampleTokenContract extends TokenContract {
   contractId: Uint8Array;
   testStorage!: Storage.Obj<common.str>;
 
   constructor() {
+    super();
+
     this.contractId = System.getContractId();
     this.testStorage = new Storage.Obj(
       this.contractId,
@@ -21,12 +22,12 @@ export class TokenContract {
   }
 
   /**
-   * Get name of the token
+   * Get version of the contract
    * @external
    * @readonly
    */
-  name(): common.str {
-    return new common.str('test');
+  version(): common.str {
+    return new common.str('1.0.0');
   }
 
   /**

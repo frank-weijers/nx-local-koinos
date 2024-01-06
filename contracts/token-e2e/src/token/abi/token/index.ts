@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Serializer } from '@roamin/local-koinos';
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import * as Abi from '../../../../../../dist/contracts/token/assembly/tokencontract-abi.json';
+import * as Abi from '../../../../../../dist/contracts/token/assembly/exampletokencontract-abi.json';
 
 export const abi = Abi;
 export const serializer = new Serializer(Abi.types);

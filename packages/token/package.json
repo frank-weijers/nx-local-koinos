@@ -1,0 +1,6 @@
+{
+  "name": "@volano/token",
+  "version": "0.1.0",
+  "ascMain": "assembly/index.ts",
+  "type": "module"
+}

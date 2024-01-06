@@ -72,6 +72,6 @@ describe('token', () => {
 
     console.log(response);
 
-    expect(response?.result?.value).toEqual('test');
+    expect(response?.result?.value).toEqual('My Token');
   });
 });

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "ascMain": "assembly/index.ts",
   "type": "module",
-  "scripts": {
-    "test": "asp --summary"
+  "dependencies": {
+    "@volano/token": "0.1.0",
+    "@volano/utils": "0.1.0"
   }
 }

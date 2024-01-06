@@ -2,14 +2,11 @@ const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
 module.exports = {
-  class: 'ExampleTokenContract',
-  proto: [],
-  files: [
-    '../../../packages/token/assembly/token-contract.ts',
-    './example-token-contract.ts'
-  ],
+  class: 'TokenContract',
+  proto: ['./proto/token.proto'],
+  files: ['./token-contract.ts'],
   sourceDir: './assembly',
-  buildDir: '../../dist/contracts/token/assembly',
+  buildDir: '../../dist/packages/token/assembly',
   protoImport: [
     {
       name: '@koinos/sdk-as',
@@ -20,13 +17,9 @@ module.exports = {
       path: '../../node_modules/koinos-precompiler-as/koinos-proto/google',
     },
     {
-      name: '@volano/token',
-      path: '../../node_modules/@volano/token/assembly/proto',
-    },
-    {
       name: '@volano/utils',
       path: '../../node_modules/@volano/utils/assembly/proto',
-    }
+    },
   ],
   networks: {
     harbinger: {
@@ -41,9 +34,9 @@ module.exports = {
         contract: {
           privateKey: process.env.HARBINGER_SMARTLOCKER_CONTRACT_PRIVATE_KEY,
           id: process.env.HARBINGER_SMARTLOCKER_CONTRACT_ID,
-          name: 'Volano Vault',
+          name: 'Volano Token',
           image: 'https://volano.app/volano.jpg',
-          description: 'Volano Vault',
+          description: 'Volano Token',
         },
         contractOwner: {
           privateKey: process.env.HARBINGER_SMARTLOCKER_OWNER_PRIVATE_KEY,
@@ -62,7 +55,7 @@ module.exports = {
           name: process.env.MAINNET_SMARTLOCKER_CONTRACT_NAME,
           image: process.env.MAINNET_SMARTLOCKER_CONTRACT_IMAGE,
           paymentPeriod:
-          process.env.MAINNET_SMARTLOCKER_CONTRACT_PAYMENT_PERIOD,
+            process.env.MAINNET_SMARTLOCKER_CONTRACT_PAYMENT_PERIOD,
           description: process.env.MAINNET_SMARTLOCKER_CONTRACT_DESCRIPTION,
           beneficiaries: process.env.MAINNET_SMARTLOCKER_CONTRACT_BENEFICIARIES,
         },

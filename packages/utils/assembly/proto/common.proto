@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package volano.common;
+
+import "koinos/options.proto";
+
+message str {
+  string value = 1;
+}
+
+message uint32 {
+  uint32 value = 1;
+}
+
+message uint64 {
+  uint64 value = 1 [jstype = JS_STRING];
+}
+
+message boole {
+  bool value = 1;
+}
+
+message address {
+  bytes account = 1 [(koinos.btype) = ADDRESS];
+}
+
+message token {
+  bytes token_id = 1 [(koinos.btype) = ADDRESS];
+}
+
+message address_and_token {
+  bytes account = 1 [(koinos.btype) = ADDRESS];
+  bytes token_id = 2 [(koinos.btype) = ADDRESS];
+}
+
+enum direction {
+  ascending = 0;
+  descending = 1;
+}
+
+message list_args {
+  bytes start = 1 [(koinos.btype) = ADDRESS];
+  int32 limit = 2;
+  direction direction = 3;
+}
+
+message list_args_string {
+  string start = 1;
+  int32 limit = 2;
+  direction direction = 3;
+}
+
+message list_args_int64 {
+  uint64 start = 1;
+  int32 limit = 2;
+  direction direction = 3;
+}
+
+message addresses {
+  repeated bytes accounts = 1 [(koinos.btype) = ADDRESS];
+}
