@@ -7,7 +7,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "koinos-precompiler-as packages/token/koinos.config.cjs"
+        "command": "koinos-precompiler-as packages/token/koinos.config.js"
       }
     },
     "build:test": {

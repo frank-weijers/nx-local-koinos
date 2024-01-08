@@ -6,7 +6,6 @@
     "test": "koinos-sdk-as-cli run-tests"
   },
   "private": true,
-  "type": "module",
   "dependencies": {
     "@koinosbox/contracts": "^1.2.2",
     "axios": "^1.0.0",
