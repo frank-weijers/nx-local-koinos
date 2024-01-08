@@ -23,6 +23,20 @@ describe('Token', () => {
     expect(name.value).toBe('My Token');
   });
 
+  it('Should return token symbol', () => {
+    const token = new TokenContract();
+    const symbol = token.symbol();
+
+    expect(symbol.value).toBe('TKN');
+  });
+
+  it('Should return token decimals', () => {
+    const token = new TokenContract();
+    const decimals = token.decimals();
+
+    expect(decimals.value).toBe(8);
+  });
+
   it('Should return token info', () => {
     const token = new TokenContract();
     const name = token.get_info();
