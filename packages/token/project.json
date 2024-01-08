@@ -16,6 +16,13 @@
         "command": "nx build token && nx test token"
       }
     },
+    "asbuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "asc dist/packages/token/assembly/index.ts --config packages/token/asconfig.json --use abort= --target release"
+      },
+      "dependsOn": ["build"]
+    },
     "publish": {
       "command": "node tools/scripts/publish.mjs token {args.ver} {args.tag}",
       "dependsOn": ["build"]
